@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 
-	"github.com/gorilla/mux"
+	"go.smantic.dev/mux"
 )
 
 func ExampleCORSMethodMiddleware() {

@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/gorilla/mux"
+	"go.smantic.dev/mux"
 )
 
 // Define our struct

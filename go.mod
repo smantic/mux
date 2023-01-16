@@ -1,3 +1,3 @@
-module github.com/gorilla/mux
+module go.smantic/dev/mux
 
 go 1.12
