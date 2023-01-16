@@ -1,3 +1,3 @@
-module go.smantic/dev/mux
+module go.smantic.dev/mux
 
 go 1.12
