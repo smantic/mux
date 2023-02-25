@@ -15,19 +15,19 @@ jobs:
         - "1.18"
         - "1.19"
         - "1.20"
-      steps:
-      - uses: actions/checkout@v3
-      - name: Set up Go
-        uses: actions/setup-go@v3
-        with:
-          cache: true
-          go-version: ${{ matrix.go-version }}
-      - name: Build
-        run: go build -v ./...
-      - name: Test
-        run: go test ./...
-      - name: Test Race
-        run: go test --race ./...
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        cache: true
+        go-version: ${{ matrix.go-version }}
+    - name: Build
+      run: go build -v ./...
+    - name: Test
+      run: go test ./...
+    - name: Test Race
+      run: go test --race ./...
   lints:
     permissions:
       contents: read
