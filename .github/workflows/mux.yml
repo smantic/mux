@@ -20,7 +20,6 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v3
       with:
-        cache: true
         go-version: ${{ matrix.go-version }}
     - name: Build
       run: go build -v ./...
