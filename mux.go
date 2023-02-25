@@ -31,17 +31,17 @@ func NewRouter() *Router {
 // It implements the http.Handler interface, so it can be registered to serve
 // requests:
 //
-//     var router = mux.NewRouter()
+//	var router = mux.NewRouter()
 //
-//     func main() {
-//         http.Handle("/", router)
-//     }
+//	func main() {
+//	    http.Handle("/", router)
+//	}
 //
 // Or, for Google App Engine, register it in a init() function:
 //
-//     func init() {
-//         http.Handle("/", router)
-//     }
+//	func init() {
+//	    http.Handle("/", router)
+//	}
 //
 // This will send all incoming requests to the router.
 type Router struct {
@@ -429,6 +429,7 @@ const (
 // Vars returns the route variables for the current request, if any.
 func Vars(r *http.Request) map[string]string {
 	if rv := r.Context().Value(varsKey); rv != nil {
+		//nolint:forcetypeassert
 		return rv.(map[string]string)
 	}
 	return nil
@@ -440,6 +441,7 @@ func Vars(r *http.Request) map[string]string {
 // after the handler returns.
 func CurrentRoute(r *http.Request) *Route {
 	if rv := r.Context().Value(routeKey); rv != nil {
+		//nolint:forcetypeassert
 		return rv.(*Route)
 	}
 	return nil
