@@ -4,19 +4,18 @@ on:
     tags:
       - '*'
 jobs: 
-  build: 
+  gogetable: 
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - name: Set up Go
       uses: actions/setup-go@v3
     - run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-    - name: create blank module
+    - name: create blank modul
       run: |
         mkdir ~/test
         cd ~/test
         go mod init test
         go mod tidy
-    - run: |  
         go version 
         go get go.smantic.dev/mux@${{ env.RELEASE_VERSION }}
