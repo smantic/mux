@@ -28,6 +28,7 @@ func (r *Router) Use(mwf ...MiddlewareFunc) {
 }
 
 // useInterface appends a middleware to the chain. Middleware can be used to intercept or otherwise modify requests and/or responses, and are executed in the order that they are applied to the Router.
+// nolint:unused
 func (r *Router) useInterface(mw middleware) {
 	r.middlewares = append(r.middlewares, mw)
 }
